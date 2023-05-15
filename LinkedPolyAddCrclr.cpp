@@ -81,7 +81,7 @@ int Attach(NodePtr& pLast, int nCoef, int nExpon)
 		pNode->nCoef = nCoef;
 		pNode->nExpon = nExpon;
 	}
-	return (int)pNode;
+	return pNode != NULL;
 }
 
 NodePtr GetHeadNode()
