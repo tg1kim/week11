@@ -58,28 +58,24 @@ int DeleteQueue(QueuePtr& pQueue, Item& nItem)
 
 void PrintQueue(QueuePtr pQueue)
 {
-	if (pQueue == NULL) {
-		printf("\n\n");
-		return;
-	}
-	NodePtr pNode, pFirst = pQueue->link;
-	pNode = pFirst;
-	do {
-		printf("----");
-		pNode = pNode->link;
-	} while (pNode != pFirst);
+	NodePtr pNode, pFirst = pQueue ? pQueue->link : NULL;
+	if (pNode = pFirst)
+		do {
+			printf("----");
+			pNode = pNode->link;
+		} while (pNode != pFirst);
 	printf("--\n");
-	pNode = pFirst;
-	do {
-		printf("%4d", pNode->nData);
-		pNode = pNode->link;
-	} while (pNode != pFirst);
+	if (pNode = pFirst)
+		do {
+			printf("%4d", pNode->nData);
+			pNode = pNode->link;
+		} while (pNode != pFirst);
 	printf("\n");
-	pNode = pFirst;
-	do {
-		printf("----");
-		pNode = pNode->link;
-	} while (pNode != pFirst);
+	if (pNode = pFirst)
+		do {
+			printf("----");
+			pNode = pNode->link;
+		} while (pNode != pFirst);
 	printf("--\n\n");
 }
 

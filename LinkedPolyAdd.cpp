@@ -50,6 +50,10 @@ void main()
 		case 5:										// 한항을 곱한다.
 			SimpleMulPolynomial(polyA, polyB[0].nCoef, polyB[0].nExpon, polyC);
 			OutputPolynomial(polyC, "C(X) = ");		// C를 출력한다.
+			if (polyC)
+				FreePolynomial(polyC);
+			SimpleMulPolynomial(polyB, polyA[0].nCoef, polyA[0].nExpon, polyC);
+			OutputPolynomial(polyC, "C(X) = ");		// C를 출력한다.
 			break;
 		case 6:										// 곱한다.
 			if (MultiplyPolynomial(polyA, polyB, polyC))
